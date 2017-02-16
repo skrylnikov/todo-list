@@ -1,3 +1,14 @@
 <h1>
   {{title}}
 </h1>
+<p>{{text}}</p>
+
+<input [(ngModel)]="text">
+<button (click)="but()">add</button>
+<button (click)="save()">save</button>
+<button (click)="load()">load</button>
+<button (click)="delete()">delete</button>
+
+<ul>
+  <li *ngFor="let item of array; let i=index">{{i}} {{item}} <button (click)="del(i)">delete</button></li>
+</ul>
