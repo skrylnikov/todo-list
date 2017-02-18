@@ -1,23 +1,31 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Todo } from '../shared/todo';
+import { TodoService } from '../shared/todo.service'
 
 @Component({
   selector: 'todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css']
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnInit {
 
-  @Input() todos: Todo[];
+  todos: Todo[];
 
-
-
-  delete(todo: Todo) {
-    let i = this.todos.indexOf(todo)
-
-    this.todos.splice(i, 1);
+  constructor(private todoService:TodoService){
+    this.todos = [];
   }
 
+  ngOnInit(){
+    this.todos = this.todoService.getTodos();
+  }
+
+  delete(todo: Todo) {
+    this.todoService.deleteTodo(todo);
+  }
+
+  toggle(todo:Todo){
+    this.todoService.toggleTodo(todo);
+  }
 
 }

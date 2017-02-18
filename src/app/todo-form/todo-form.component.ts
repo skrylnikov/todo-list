@@ -1,4 +1,6 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, } from '@angular/core';
+
+import { TodoService } from '../shared/todo.service'
 
 @Component({
   selector: 'todo-form',
@@ -8,18 +10,10 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class TodoFormComponent {
   title: string = '';
 
-  @Output() add = new EventEmitter();
+  constructor(private todoService: TodoService) { }
 
   create() {
-    this.add.emit(this.title);
+    this.todoService.createTodo(this.title);
+    this.title = '';
   }
-  /*add() {
-      /*
-if (this.title.length > 0) {
-let todo :Todo = new Todo(this.title);
-this.todos.push(todo);
-this.title='';
-}
- 
-}*/
 }

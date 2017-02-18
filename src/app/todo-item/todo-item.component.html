@@ -1,6 +1,6 @@
 <div [class.completed]="todo.completed">
   <div class="ui read-only  checkbox">
-    <input type="checkbox" [checked]="todo.completed" (click)="toggle()">
+    <input type="checkbox" [checked]="todo.completed" (click)="onToggle()">
     <label></label>
   </div>
   {{todo.title}}

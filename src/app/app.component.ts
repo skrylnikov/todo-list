@@ -9,13 +9,12 @@ import { Todo } from './shared/todo';
 })
 export class AppComponent {
 
-  todos: Todo[] = [new Todo('Create todo list'), new Todo('Play Dota 2', true)]
-
+/*
   add(title: string) {
     let todo: Todo = new Todo(title);
     this.todos.push(todo);
   }
-
+*/
 
 
 }
