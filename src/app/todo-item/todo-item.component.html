@@ -1,0 +1,14 @@
+
+        <div [class.completed]="todo.completed">
+          <div  class="ui read-only  checkbox" >
+            <input type="checkbox" [checked]="todo.completed" (click)="toggle()">
+            <label></label>
+          </div>
+           {{todo.title}} 
+          <div (click)="onDelete()" class="ui secondary vertical animated button right floated left aligned two wide column " tabindex="0">
+            <div class="hidden content">Remove</div>
+            <div class="visible content">
+              <i class="remove icon"></i>
+            </div>
+          </div>
+        </div> 

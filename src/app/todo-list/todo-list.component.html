@@ -1,0 +1,5 @@
+<div class="ui inverted relaxed divided list">
+    <div class="item content header grid" *ngFor="let todo of todos; let i=index">
+      <todo-item [todo]="todo" (delete)="delete(todo)"></todo-item>
+    </div>
+  </div>
